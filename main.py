@@ -11,9 +11,9 @@ import requests
 load_dotenv()
 
 # Get the credentials from the environment
-aws_access_key_id = ""
-aws_secret_access_key = ""
-aws_region = ""
+k_id = ""
+s_access_k = ""
+region = ""
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -23,9 +23,9 @@ class S3NewsProcessor:
     def __init__(self):
         self.s3_client = boto3.client(
             's3',
-            aws_access_key_id=aws_access_key_id,
-            aws_secret_access_key=aws_secret_access_key,
-            region_name=aws_region
+            aws_access_key_id=k_id,
+            aws_secret_access_key=s_access_k,
+            region_name=region
         )
 
     def fetch_csv_from_s3(self, bucket_name, file_key):
